@@ -1,7 +1,7 @@
 class Author < ApplicationRecord
   has_many :books
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
   def to_s
     name

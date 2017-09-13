@@ -1,7 +1,12 @@
-Rails.application.routes.draw do
-  resources :authors do
-    resources :books
-  end
+# frozen_string_literal: true
 
-  root to: 'authors#index'
+Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      resources :authors do
+        resources :books
+      end
+      resource :auth, only: %i[create]
+    end
+  end
 end
