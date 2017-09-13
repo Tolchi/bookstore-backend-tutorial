@@ -1,24 +1,7 @@
-# README
+# Bookstore Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Build Status](https://travis-ci.org/Tolchi/bookstore-backend-tutorial.svg?branch=master)](https://travis-ci.org/Tolchi/bookstore-backend-tutorial)
+[![Code Climate](https://codeclimate.com/github/Tolchi/bookstore-backend-tutorial/badges/gpa.svg)](https://codeclimate.com/github/Tolchi/bookstore-backend-tutorial)
+[![Test Coverage](https://codeclimate.com/github/Tolchi/bookstore-backend-tutorial/badges/coverage.svg)](https://codeclimate.com/github/Tolchi/bookstore-backend-tutorial)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Example of Rails API app.
