@@ -8,6 +8,6 @@ before_script:
 addons:
   postgresql: "9.6"
   code_climate:
-    repo_token:
+    repo_token: 0dc8947b38accd62f0a8adf6c52b75aad317a67631c4dbf6bb2521380eb2c8a2
 after_success:
   - bundle exec codeclimate-test-reporter
