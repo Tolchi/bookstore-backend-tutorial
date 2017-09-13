@@ -3,7 +3,7 @@ services:
   - postgresql
 env:
     global:
-      - CC_TEST_REPORTER_ID=787a2f89b15c637323c7340d65ec17e898ac44480706b4b4122ea040c2a88f1d
+      - CC_TEST_REPORTER_ID=0dc8947b38accd62f0a8adf6c52b75aad317a67631c4dbf6bb2521380eb2c8a2
       - "RAILS_ENV=test"
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -12,7 +12,5 @@ before_script:
   - RAILS_ENV=test bin/rails db:create db:migrate
 addons:
   postgresql: "9.6"
-  code_climate:
-    repo_token: 0dc8947b38accd62f0a8adf6c52b75aad317a67631c4dbf6bb2521380eb2c8a2
 after_success:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
