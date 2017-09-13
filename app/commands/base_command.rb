@@ -22,10 +22,10 @@ class BaseCommand
   private
 
   def initialize(*_)
-    not_implemented
+    raise NotImplementedError, 'Implement `initizlize` for classes inheriting from BaseCommand'
   end
 
   def payload
-    not_implemented
+    raise NotImplementedError, 'Implement `payload` for classes inheriting from BaseCommand'
   end
 end

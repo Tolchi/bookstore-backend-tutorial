@@ -10,7 +10,7 @@ class DecodeAuthenticationCommand < BaseCommand
   
   def payload
     return unless token_present?
-    @result = user if user && token_not_expired?
+    @result = user if user
   end
 
   def user
@@ -19,7 +19,7 @@ class DecodeAuthenticationCommand < BaseCommand
   end
 
   def token_present?
-    token.present?
+    token.present? && token_contents.present?
   end
 
   def token
@@ -33,14 +33,14 @@ class DecodeAuthenticationCommand < BaseCommand
   end
 
   def token_contents
-    @token_contents ||= JwtService.decode(token)
+    @token_contents ||= begin
+      decoded = JwtService.decode(token)
+      errors.add(:token, I18n.t('decode_authentication_command.token_expired')) unless decoded
+      decoded
+    end
   end
 
   def decoded_id
     token_contents['user_id']
-  end
-
-  def decoded_expiration_timestamp
-    token_contents['expiration'] || 0
   end
 end

@@ -12,18 +12,26 @@ gem 'jbuilder', '~> 2.5'
 gem 'jwt'
 gem 'money-rails'
 gem 'nokogiri', require: false
+gem 'openssl', '2.0.5'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'rack-cors'
+gem 'rbnacl'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
   gem 'timecop'
+end
+
+group :test do
+  gem 'simplecov'
 end
 
 group :development do
